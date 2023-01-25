@@ -1,1 +1,3 @@
 # Generaration_barber
+Description:
+ In our website customer can buy products and tools like shaves, clippers, shears, after shave lotion, hair dryers and combs. Also, the customer can book online for his place in the barber shop, He can book the hairstyles that he wants from the magazines and he can also book for the full service like washing, making hot towel, cold towel and etc. …. The customer can also request for haircut from home and the barber will go to his home and make the haircut to the customer. The customer can cancel the request or booking in any time before the barber come to him and before the booking in 15 mints. The customer can pay with credit card or with cash.
