@@ -1,0 +1,132 @@
+<?php
+include_once "DBconnection.php";
+if (isset($_REQUEST["id"]))
+{
+  $sql="select * from user where id=".$_REQUEST["id"];
+      $result=mysqli_query($conn,$sql);
+      $row=mysqli_fetch_assoc($result);
+      
+}
+
+?>
+<link href="../assets/img/logo/99.png" rel="icon">
+  <link href="../assets/img/logo/99.png" rel="apple-touch-icon">
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form { 
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  height: 500px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background:#1977cc;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #1977cc;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #1977cc;
+  text-decoration: none;
+}
+.form .register-form {
+
+ 
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+  background: white; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right,white, white);
+  background: -moz-linear-gradient(right,white, white);
+  background: -o-linear-gradient(right, white, white);
+  background: linear-gradient(to left, white, white);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+</style>
+
+<div class="login-page">
+    <div class="form">
+        <img style="height: 150px; width: 150px;;" src="../assets/img/logo/99.png">
+        <form action="updating.php" method="POST"  class="register-form"> 
+        <input type="hidden" value="<?php  echo $row["id"]  ?>" name="id"  /> <!-- value  e3ny el value bt3ha yb2a eh -->
+        <input type="text" value="<?php  echo $row["username"]  ?>" name="username"/>
+        <input type="text" value="<?php  echo $row["e-mail"]  ?>" name="email" />
+        <input type="password" value="<?php  echo $row["password"]  ?>" name="psw" />
+        <input type="text" value="<?php  echo $row["address"]  ?>" name="add" />
+        <input type="text"  value="<?php  echo $row["phone number"]  ?> " name="PN" />
+        <button>Update</button>
+      </form>
+    </div>
+  </div>
